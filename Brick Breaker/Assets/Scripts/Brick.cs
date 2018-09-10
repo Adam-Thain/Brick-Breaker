@@ -92,6 +92,8 @@ public class Brick : MonoBehaviour {
     {
         GameObject smokePuff = Instantiate(smoke, gameObject.transform.position, Quaternion.identity) as GameObject;
         smokePuff.GetComponent<ParticleSystem>().startColor = gameObject.GetComponent<SpriteRenderer>().color;
+
+        Destroy(smokePuff, smokePuff.GetComponent<ParticleSystem>().duration + 1f);
     }
 
     /// <summary>
